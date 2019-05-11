@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.imooc.miaosha1.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.imooc.miaosha1.entity.Order">
+        <result column="id" property="id"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="pay_type" property="payType"/>
+        <result column="pay_status" property="payStatus"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="total_price" property="totalPrice"/>
+        <result column="total_goods_price" property="totalGoodsPrice"/>
+        <result column="freight_price" property="freightPrice"/>
+        <result column="count" property="count"/>
+        <result column="pay_time" property="payTime"/>
+        <result column="delivery_time" property="deliveryTime"/>
+        <result column="complete_time" property="completeTime"/>
+        <result column="close_time" property="closeTime"/>
+        <result column="user_id" property="userId"/>
+        <result column="store_id" property="storeId"/>
+        <result column="user_name" property="userName"/>
+        <result column="message" property="message"/>
+        <result column="REVISION" property="revision"/>
+        <result column="CREATED_BY" property="createdBy"/>
+        <result column="CREATED_TIME" property="createdTime"/>
+        <result column="UPDATED_BY" property="updatedBy"/>
+        <result column="UPDATED_TIME" property="updatedTime"/>
+        <result column="record_status" property="recordStatus"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        order_no, pay_type, pay_status, order_status, total_price, total_goods_price, freight_price, count, pay_time, delivery_time, complete_time, close_time, user_id, store_id, user_name, message, REVISION, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME, record_status
+    </sql>
+
+</mapper>

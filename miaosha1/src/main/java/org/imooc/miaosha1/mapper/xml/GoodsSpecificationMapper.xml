@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.imooc.miaosha1.mapper.GoodsSpecificationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.imooc.miaosha1.entity.GoodsSpecification">
+        <result column="id" property="id"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_specs" property="goodsSpecs"/>
+        <result column="specs_seq" property="specsSeq"/>
+        <result column="goods_stock" property="goodsStock"/>
+        <result column="sales_volume" property="salesVolume"/>
+        <result column="goods_price" property="goodsPrice"/>
+        <result column="original_price" property="originalPrice"/>
+        <result column="store_id" property="storeId"/>
+        <result column="REVISION" property="revision"/>
+        <result column="CREATED_BY" property="createdBy"/>
+        <result column="CREATED_TIME" property="createdTime"/>
+        <result column="UPDATED_BY" property="updatedBy"/>
+        <result column="UPDATED_TIME" property="updatedTime"/>
+        <result column="record_status" property="recordStatus"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        goods_id, goods_specs, specs_seq, goods_stock, sales_volume, goods_price, original_price, store_id, REVISION, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME, record_status
+    </sql>
+
+</mapper>
