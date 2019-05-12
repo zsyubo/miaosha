@@ -10,6 +10,7 @@ import org.imooc.mall.common.enumconstant.RecordStatusEnum;
 import org.imooc.mall.entity.MallUser;
 import org.imooc.mall.mapper.MallUserMapper;
 import org.imooc.mall.service.IMallUserService;
+import org.imooc.mall.util.MD5Util;
 import org.imooc.mall.vo.request.LoginVo;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,10 @@ public class MallUserServiceImpl extends ServiceImpl<MallUserMapper, MallUser> i
         if (mallUser == null) {
             throw new MallException(ShopExceptionEnum.FAIL_LOGIN);
         }
-//        String md5Pass = MD5Util.
+        String md5Pass = MD5Util.inputPassToDBPass(loginVo.getPassword(), mallUser.getSalt());
+        if (!mallUser.getPassword().equals(md5Pass)) {
+            throw new MallException(ShopExceptionEnum.FAIL_LOGIN);
+        }
 
     }
 

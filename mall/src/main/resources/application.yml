@@ -11,9 +11,16 @@ spring:
 mybatis-plus:
   mapper-locations: classpath*:org/imooc/mall/mapper/xml/*.xml
   global-config:
-    id-type: 0 #0:\u6570\u636E\u5E93ID\u81EA\u589E   1:\u7528\u6237\u8F93\u5165id  2:\u5168\u5C40\u552F\u4E00id(IdWorker)  3:\u5168\u5C40\u552F\u4E00ID(uuid)
+    id-type: 0 #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
     db-column-underline: true
     refresh-mapper: true
   configuration:
     call-setters-on-nulls: true
     map-underscore-to-camel-case: true
+
+jwt:
+  header: Authorization   #http请求头所需要的字段
+  secret: h72PfeKvUAzT5gMQ        #jwt秘钥
+  expiration: 31536000      #7天 单位:秒
+  auth-path: /auth        #认证请求的路径
+  md5-key: r8klNBcKVvFO0sbT      #md5加密混淆key

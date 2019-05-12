@@ -37,7 +37,17 @@ public enum ShopExceptionEnum implements ServiceExceptionEnum {
      * 错误的请求
      */
     REQUEST_NULL(400, "请求有错误"),
-    SERVER_ERROR(500, "服务器异常");
+    SERVER_ERROR(500, "服务器异常"),
+    /**
+     * 登录token异常, 700
+     */
+    TOKEN_EXPIRED(501, "授权过期或请求头无携带授权信息"),
+    SIGN_ERROR(502, "签名验证失败")
+    /**
+     * 其他
+     */
+    , WRITE_ERROR(503, "渲染界面错误"), ENCRYPT_ERROR(504, "加解密错误");
+
 
     private Integer code;
     private String message;
