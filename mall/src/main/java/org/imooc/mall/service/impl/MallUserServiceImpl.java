@@ -40,7 +40,9 @@ public class MallUserServiceImpl extends ServiceImpl<MallUserMapper, MallUser> i
         if (mallUser == null) {
             throw new MallException(ShopExceptionEnum.FAIL_LOGIN);
         }
-        String md5Pass = MD5Util.inputPassToDBPass(loginVo.getPassword(), mallUser.getSalt());
+        System.out.println("未加密钱的密码：" + loginVo.getPassword());
+        String md5Pass = MD5Util.inputPassToDbPass(loginVo.getPassword(), mallUser.getSalt());
+        System.out.println("md5Pass:" + md5Pass);
         if (!mallUser.getPassword().equals(md5Pass)) {
             throw new MallException(ShopExceptionEnum.FAIL_LOGIN);
         }
