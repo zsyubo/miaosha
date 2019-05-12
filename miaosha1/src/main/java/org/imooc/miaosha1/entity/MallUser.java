@@ -23,8 +23,8 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("yh_user")
-public class User implements Serializable {
+@TableName("yh_mall_user")
+public class MallUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -58,6 +58,11 @@ public class User implements Serializable {
      * 密码
      */
     private String password;
+
+    /**
+     * 秘钥
+     */
+    private String salt;
 
     /**
      * 电话号码

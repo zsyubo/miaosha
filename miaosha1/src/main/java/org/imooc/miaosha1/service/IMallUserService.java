@@ -1,7 +1,8 @@
 package org.imooc.miaosha1.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.imooc.miaosha1.entity.User;
+import org.imooc.miaosha1.entity.MallUser;
+import org.imooc.miaosha1.vo.request.LoginVo;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import org.imooc.miaosha1.entity.User;
  * @author zsyubo
  * @since 2019-05-11
  */
-public interface IUserService extends IService<User> {
+public interface IMallUserService extends IService<MallUser> {
 
+    void login(LoginVo loginVo);
 }
