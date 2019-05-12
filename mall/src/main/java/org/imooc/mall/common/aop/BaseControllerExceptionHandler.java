@@ -37,7 +37,7 @@ public class BaseControllerExceptionHandler {
      * 拦截业务异常
      */
     @ExceptionHandler(MallException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public ServerResponse bussiness(MallException e) {
         return ServerResponse.creatByErrorException(e);

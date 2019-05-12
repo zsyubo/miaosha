@@ -15,6 +15,7 @@
         <result column="nick_name" property="nickName"/>
         <result column="account_type" property="accountType"/>
         <result column="login_count" property="loginCount"/>
+        <result column="token_refresh" property="tokenRefresh"/>
         <result column="head_sculpture_url" property="headSculptureUrl"/>
         <result column="REVISION" property="revision"/>
         <result column="CREATED_BY" property="createdBy"/>
@@ -27,7 +28,7 @@
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
-        user_name, uid, integral, integral_total, password,salt, telephone, nick_name, account_type, login_count, head_sculpture_url, REVISION, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME, record_status
+        user_name, uid, integral, integral_total, password,salt, telephone, nick_name, account_type, login_count,token_refresh, head_sculpture_url, REVISION, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME, record_status
     </sql>
 
 </mapper>

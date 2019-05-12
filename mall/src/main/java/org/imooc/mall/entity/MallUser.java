@@ -85,6 +85,11 @@ public class MallUser implements Serializable {
     private Integer loginCount;
 
     /**
+     * token刷新次数
+     */
+    private Integer tokenRefresh;
+
+    /**
      * 头像url
      */
     private String headSculptureUrl;
