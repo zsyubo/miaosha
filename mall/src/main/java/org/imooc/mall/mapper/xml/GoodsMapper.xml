@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.imooc.mall.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.imooc.mall.entity.Goods">
+        <result column="id" property="id"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="brand_id" property="brandId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="title" property="title"/>
+        <result column="main_image" property="mainImage"/>
+        <result column="detail" property="detail"/>
+        <result column="attribute_list" property="attributeList"/>
+        <result column="price_range" property="priceRange"/>
+        <result column="stock" property="stock"/>
+        <result column="store_id" property="storeId"/>
+        <result column="min_price" property="minPrice"/>
+        <result column="max_price" property="maxPrice"/>
+        <result column="freight" property="freight"/>
+        <result column="REVISION" property="revision"/>
+        <result column="CREATED_BY" property="createdBy"/>
+        <result column="CREATED_TIME" property="createdTime"/>
+        <result column="UPDATED_BY" property="updatedBy"/>
+        <result column="UPDATED_TIME" property="updatedTime"/>
+        <result column="record_status" property="recordStatus"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        category_id, brand_id, goods_name, title, main_image, detail, attribute_list, price_range, stock, store_id, min_price, max_price, freight, REVISION, CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME, record_status
+    </sql>
+
+</mapper>
