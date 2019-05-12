@@ -3,6 +3,7 @@ package org.imooc.mall.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.imooc.mall.entity.MallUser;
 import org.imooc.mall.vo.request.LoginVo;
+import org.imooc.mall.vo.response.MallUserVo;
 
 /**
  * <p>
@@ -14,5 +15,13 @@ import org.imooc.mall.vo.request.LoginVo;
  */
 public interface IMallUserService extends IService<MallUser> {
 
-    void login(LoginVo loginVo);
+    /**
+     * 登录信息校验
+     *
+     * @param loginVo 登录参数
+     * @return org.imooc.mall.vo.response.MallUserVo
+     * @author hyf
+     * @date 2019-05-12
+     */
+    MallUserVo login(LoginVo loginVo);
 }

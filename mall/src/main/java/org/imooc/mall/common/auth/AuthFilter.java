@@ -1,9 +1,11 @@
 package org.imooc.mall.common.auth;
 
 
+import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.imooc.mall.common.ServerResponse;
 import org.imooc.mall.common.ShopExceptionEnum;
+import org.imooc.mall.config.CommonProperties;
 import org.imooc.mall.config.properties.JwtProperties;
 import org.imooc.mall.util.JwtTokenUtil;
 import org.imooc.mall.util.RenderUtil;
@@ -81,14 +83,14 @@ public class AuthFilter extends OncePerRequestFilter {
         System.err.println(header);
         String prefix = jwtProperties.getPrefix();
         //判断请求头的内容
-        if (ToolUtil.isEmpty(header) || !header.startsWith(prefix)) {
+        if (StrUtil.isEmpty(header) || !header.startsWith(prefix)) {
             log.info("请求头异常");
             //RenderUtil.renderJson(response, new ErrorTip(BizExceptionEnum.TOKEN_ERROR.getCode(), BizExceptionEnum.TOKEN_ERROR.getMessage()));
             return false;
         }
         authToken = header.substring(prefix.length());
         log.info("用户的请求头:{}", authToken);
-        if (ToolUtil.isEmpty(authToken)) {
+        if (StrUtil.isEmpty(authToken)) {
             return false;
         }
         //验证token是否过期
@@ -97,7 +99,6 @@ public class AuthFilter extends OncePerRequestFilter {
             log.info("token过期");
             return false;
         }
-
         //判断token是有实际用户存在
 //      sachetPlayer sachetPlayer = PlayerKit.getsachetPlayer(authToken);
 //      if(ToolUtil.isEmpty(sachetPlayer)){
